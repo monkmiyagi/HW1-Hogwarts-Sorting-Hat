@@ -1,0 +1,157 @@
+# HW1-Hogwarts-Sorting-Hat
+#include<iostream>
+#include<windows.h> // for 'Sleep()' = makes a short delay of 2 seconds for better UX
+using namespace std;
+
+//HW1_315793737_Q2
+
+/*
+Variables
+
+Legend -
+pref = Preference
+G = Gryffindor
+H = Hufflepuff
+R = Ravenclaw
+S = Slydderin
+X = No Preference
+q = Question
+birthMonth = Users month of birth
+*/
+
+char pref;
+char G, H, R, S, X;
+int sum, q1, q2, q3, birthMonth = 0;
+
+
+int main()
+{
+	cout << "Welcome to Hogwarts, School of Wizardy and Magic! \n";
+	Sleep(2000);
+	cout << "The Sorting Hat went on vacation... \n";
+	Sleep(2000);
+	cout << "I will be choosing your house for now, please enter the following: \n";
+
+	Sleep(2000);
+
+	cout << "Is the student an introvert (0) or an extrovert (1)? \n";
+	cin >> q1;
+	if (q1 != 0 && q1 != 1) {
+		cout << "Error! \n";
+		system("pause>NULL");
+		return 1;
+	}// end of if
+
+	cout << "Is the student rational (0) or emotional (1)? \n";
+	cin >> q2;
+	if (q2 != 0 && q2 != 1) {
+		cout << "Error! \n";
+		system("pause>NULL");
+		return 1;
+	}// end of if
+
+	cout << "Is the student helpful (1) or not (0)? \n";
+	cin >> q3;
+	if (q3 != 0 && q3 != 1) {
+		cout << "Error! \n";
+		system("pause>NULL");
+		return 1;
+	}// end of if
+
+	if (q1 == 1 && q2 == 1 && q3 == 1) {
+		cout << "Based on your personal defining, I sentence you for - \n";
+		cout << "Gryffindor! \n";
+		system("pause>NULL");
+	}//end of if
+	else
+		if (q1 == 0 && q2 == 1 && q3 == 1) {
+			cout << "Based on your personal defining, I sentence you for - \n";
+			cout << "Hufflepuff! \n";
+			system("pause>NULL");
+		}//end of if
+		else
+			if (q1 == 0 && q2 == 0 && q3 == 1) {
+				cout << "Based on your personal defining, I sentence you for - \n";
+				cout << "Ravenclaw! \n";
+				system("pause>NULL");
+			}//end of if
+			else
+				if (q1 == 1 && q2 == 0 && q3 == 0) {
+					cout << "Based on your personal defining, I sentence you for - \n";
+					cout << "Slydderin! \n";
+					system("pause>NULL");
+				}//end of if
+				else
+					cout << "Please enter your month of birth (1-12) \n";
+					cin >> birthMonth;
+					if (birthMonth < 1 || birthMonth > 12) {
+						cout << "Error! \n";
+						system("pause>NULL");
+						return 1;
+					}//end of if
+					cout << "Please enter your house preference - G, H, R, S or X for no preference \n";
+					cin >> pref;
+					if (pref != 'G' && pref != 'H' && pref != 'R' && pref != 'S' && pref != 'X') {
+						cout << "Error \n";
+						system("pause>NULL");
+						return 1;
+					}//end of if
+
+					if (pref == 'X') {
+						switch (birthMonth) {
+						case 1:
+						case 2:
+						case 3:
+							cout << "No preference was chosen, choosing by birth month... \n";
+							cout << "Welcome to Gryffindor! \n";
+							system("pause>NULL");
+							break;
+						case 4:
+						case 5:
+						case 6:
+							cout << "No preference was chosen, choosing by birth month... \n";
+							cout << "Welcome to Hufflepuff! \n";
+							system("pause>NULL");
+							break;
+						case 7:
+						case 8:
+						case 9:
+							cout << "No preference was chosen, choosing by birth month... \n";
+							cout << "Welcome to Ravenclaw! \n";
+							system("pause>NULL");
+							break;
+						case 10:
+						case 11:
+						case 12:
+							cout << "No preference was chosen, choosing by birth month... \n";
+							cout << "Welcome to Slydderin! \n";
+							system("pause>NULL");
+							break;
+
+						}// end of switch
+					}// end of if
+					else
+						if (pref != 'X')
+							cout << "No known configuration was chosen, choosing by preference... \n";
+							switch (pref) {
+							case 'G':
+								cout << "Welcome to Gryffindor! \n";
+								system("pause>NULL");
+								break;
+							case 'H':
+								cout << "Welcome to Hufflepuff! \n";
+								system("pause>NULL");
+								break;
+							case 'R':
+								cout << "Welcome to Ravenclaw! \n";
+								system("pause>NULL");
+								break;
+							case 'S':
+								cout << "Welcome to Slydderin! \n";
+								system("pause>NULL");
+								break;
+						}//end of switch
+
+system("pause>NULL");
+return 0;
+}//end of main
